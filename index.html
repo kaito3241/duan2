@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chúc Mừng Năm Mới Em Yêu</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .page {
+        width: 100%;
+        height: 100vh;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      /* ===== Trang 1 ===== */
+      #page1 {
+        display: flex;
+        background: linear-gradient(135deg, #e617db, #ff99ac);
+        color: white;
+      }
+
+      .icon {
+        font-size: 120px;
+        animation: beat 1.2s infinite;
+      }
+
+      @keyframes beat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      button {
+        margin-top: 30px;
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        background-color: white;
+        color: #ff4f7b;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+      }
+
+      /* ===== Trang 2 ===== */
+      #page2 {
+        background: linear-gradient(135deg, #ff6a88, #ff99ac);
+        text-align: center;
+        padding: 20px;
+      }
+
+      #page2 img {
+        width: 220px;
+        height: 220px;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        color: #ff0022;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.6;
+        max-width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Trang 1 -->
+    <div class="page" id="page1">
+      <div class="icon">💖</div>
+      <button onclick="goToPage2()">Nhấn vào đây em nhé</button>
+    </div>
+
+    <!-- Trang 2 -->
+    <div class="page" id="page2">
+      <!-- Thay ảnh tại đây -->
+      <img
+        src="/z7386146454578_719a5677522f2ab79eef79bf6cdc9b0e.jpg"
+        alt="Em yêu"
+      />
+
+      <h1>Chúc Mừng Năm Mới Em Yêu</h1>
+      <p>
+        <b
+          >Năm mới đến rồi, anh chúc em luôn vui vẻ, xinh đẹp và hạnh phúc. Mong
+          rằng mọi điều tốt đẹp nhất sẽ đến với em. Cảm ơn em vì đã xuất hiện
+          trong cuộc đời anh. Và trong năm sắp tới gặp được nhiều may mắn, yêu
+          em nhiều lắm. 💕</b
+        >
+      </p>
+    </div>
+    <script>
+      setInterval(() => {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "-20px";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        heart.style.animation = "fall 5s linear";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 5000);
+      }, 300);
+    </script>
+
+    <style>
+      @keyframes fall {
+        to {
+          transform: translateY(110vh);
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <script>
+      function goToPage2() {
+        document.getElementById("page1").style.display = "none";
+        document.getElementById("page2").style.display = "flex";
+      }
+    </script>
+  </body>
+</html>
